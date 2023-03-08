@@ -6,17 +6,17 @@ I did this project in order to
 * Make pages with dynamic content.
 
 ## Download the dependencies used in this project
-Write in the terminal:
+Type in the terminal:
 ```bash
 npm i
 ```
 
 ## Run your local server
-Write in the terminal:
+Type in the terminal:
 ```bash
 nodemon app.js
 ```
 
 ## Use your favorite browser
 Type:
-localhost:8080
+* localhost:8080
