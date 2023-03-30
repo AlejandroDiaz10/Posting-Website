@@ -1,3 +1,4 @@
 .DS_Store
 node_modules/
-# In order to download the node modules use: npm i
+.env
+# In order to install all dependencies used in this project: npm i
