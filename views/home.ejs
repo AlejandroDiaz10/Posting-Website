@@ -3,12 +3,21 @@
 <h1>Home</h1>
 <p> <%= homeContent %> </p>
 
-<% posts.forEach(function(post) { %>
-    <h2> <%= post.title; %> </h2>
-    <p> 
-        <%= post.description.substring(0, 100) + " ..."; %> 
-        <a href="/posts/<%= post.id %>">Read More</a>
-    </p>
-<% }); %>
+<section class="posts-section">
+    <% posts.forEach(function(post) { %>
+
+        <h2> <%= post.title; %> </h2>
+
+          <div class="post-info">
+              <% if (post.description.length > 100) { %> 
+                  <p><%= post.description.substring(0, 100) + " ..."; %></p>
+              <% } else { %> 
+                  <p><%= post.description; %></p>
+              <% } %> 
+              <a href="/posts/<%= post.id %>" class="btn btn-primary">View details</a>
+          </div>
+
+    <% }); %>
+</section>
 
 <%- include("partials/footer"); -%>
