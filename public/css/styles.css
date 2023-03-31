@@ -58,19 +58,18 @@ label {
 
 .post-info {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: space-between;
 }
 
 .post-info p {
     flex-grow: 1;
-    max-width: 50%;
+    max-width: 70%;
     margin-right: 20px;
 }
 
 .post-info a {
-    flex: 1;
     display: inline-block;
     text-align: center;
     padding: 1.2rem;
@@ -79,6 +78,20 @@ label {
     border-radius: 4px;
     color: var(--white_color);
     border: none;
+    flex-grow: 1;
+    max-width: 25%;
+    margin-left: auto;
+}
+
+@media (max-width: 460px) {
+    .post-info a {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .post-info a:hover {
+        font-size: 10px !important;
+    }
 }
 
 .post-info a:hover {
@@ -90,6 +103,7 @@ label {
 }
 
 .red-btn,
+.blue-btn,
 .publish-btn {
     padding: 1.2rem;
     border: none;
@@ -103,16 +117,21 @@ label {
 .red-btn {
     margin-top: 4rem;
     background-color: var(--red_color);
+}
 
+.blue-btn {
+    margin-top: 4rem;
+    background-color: var(--secundary);
 }
 
 .publish-btn {
     background-color: var(--secundary);
 }
 
+.post-info a:hover,
 .red-btn:hover,
-.publish-btn:hover,
-.post-info a:hover {
+.blue-btn:hover,
+.publish-btn:hover {
     padding: 1.5rem;
     font-size: 1.5rem;
     font-weight: bold;

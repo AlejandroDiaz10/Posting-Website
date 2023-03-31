@@ -2,7 +2,6 @@
 
 <h1>Home</h1>
 <p> <%= homeContent %> </p>
-
 <section class="posts-section">
     <% posts.forEach(function(post) { %>
 
@@ -14,7 +13,7 @@
               <% } else { %> 
                   <p><%= post.description; %></p>
               <% } %> 
-              <a href="/posts/<%= post.id %>" class="btn btn-primary">View details</a>
+                <a href="/posts/<%= post.id %>" class="btn btn-primary">View details</a>
           </div>
 
     <% }); %>

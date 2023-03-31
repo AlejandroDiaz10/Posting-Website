@@ -28,10 +28,21 @@ const getPost = async function (req, res) {
     const reqId = req.params.postId;
 
     await Post.findOne({ _id: reqId })
-        // .then(post => res.render("post", { postTitle: post.title, postContent: post.description }))
         .then(post => {
             // console.log(post);
-            res.render("post", { postTitle: post.title, postContent: post.description })
+            res.render("post", { postTitle: post.title, postContent: post.description, postID: post._id })
+        })
+        .catch(err => console.log(err));
+}
+
+const deletePost = async function (req, res) {
+    const postID = req.body.PostId;
+    console.log(postID);
+
+    await Post.findByIdAndDelete(postID)
+        .then(() => {
+            // console.log("Post has been successfully deleted");
+            return res.redirect("/");
         })
         .catch(err => console.log(err));
 }
@@ -40,4 +51,5 @@ module.exports = {
     getAllPosts,
     composeNewPost,
     getPost,
+    deletePost,
 }
